@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace DeepSigma.Charting.DataModels
+namespace DeepSigma.Charting.Models
 {
     /// <summary>
     /// Represents a data model for categorical data points.

@@ -1,5 +1,5 @@
 ﻿
-namespace DeepSigma.Charting.DataModels
+namespace DeepSigma.Charting.Models
 {
     /// <summary>
     /// Represents a data model for box plot charts.

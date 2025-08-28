@@ -1,5 +1,5 @@
 ﻿
-namespace DeepSigma.Charting.DataModels
+namespace DeepSigma.Charting.Models
 {
     /// <summary>
     /// Marker interface for data models used in charting components.

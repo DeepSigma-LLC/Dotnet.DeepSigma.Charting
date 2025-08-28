@@ -1,4 +1,4 @@
-﻿using DeepSigma.Charting.DataModels;
+﻿using DeepSigma.Charting.Models;
 using System.Drawing;
 
 namespace DeepSigma.Charting.Interfaces
