@@ -1,26 +1,25 @@
 ﻿
-namespace DeepSigma.Charting.Enum
+namespace DeepSigma.Charting.Enum;
+
+/// <summary>
+/// Defines the type of axis used in charts.
+/// </summary>
+public enum AxisType
 {
     /// <summary>
-    /// Defines the type of axis used in charts.
+    /// A linear axis where values increase uniformly.
     /// </summary>
-    public enum AxisType
-    {
-        /// <summary>
-        /// A linear axis where values increase uniformly.
-        /// </summary>
-        Linear,
-        /// <summary>
-        /// A logarithmic axis where values increase exponentially.
-        /// </summary>
-        Logarithmic,
-        /// <summary>
-        /// A date-time axis for representing time-based data.
-        /// </summary>
-        DateTime,
-        /// <summary>
-        /// A categorical axis for discrete categories.
-        /// </summary>
-        Categorical
-    }
+    Linear,
+    /// <summary>
+    /// A logarithmic axis where values increase exponentially.
+    /// </summary>
+    Logarithmic,
+    /// <summary>
+    /// A date-time axis for representing time-based data.
+    /// </summary>
+    DateTime,
+    /// <summary>
+    /// A categorical axis for discrete categories.
+    /// </summary>
+    Categorical
 }

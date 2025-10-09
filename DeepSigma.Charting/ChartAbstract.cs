@@ -2,71 +2,70 @@
 using DeepSigma.Charting.Enum;
 using DeepSigma.Charting.Interfaces;
 
-namespace DeepSigma.Charting
+namespace DeepSigma.Charting;
+
+/// <summary>
+/// Represents a chart with various properties and configurations.
+/// </summary>
+public abstract class ChartAbstract<T> : IChart<T> where T : IAxis 
 {
     /// <summary>
-    /// Represents a chart with various properties and configurations.
+    /// The title of the chart.
     /// </summary>
-    public abstract class ChartAbstract<T> : IChart<T> where T : IAxis 
+    public string Title { get; set; } = String.Empty;
+
+    /// <summary>
+    /// The collection of data series in the chart.
+    /// </summary>
+    public List<IChartSeriesAbstract> Series { get; init; } = [];
+
+    /// <summary>
+    /// Gets all series of a specific data model type.
+    /// </summary>
+    /// <returns></returns>
+    public List<IChartSeriesAbstract> GetSeries()
     {
-        /// <summary>
-        /// The title of the chart.
-        /// </summary>
-        public string Title { get; set; } = String.Empty;
+        return Series;
+    }
 
-        /// <summary>
-        /// The collection of data series in the chart.
-        /// </summary>
-        public List<IChartSeriesAbstract> Series { get; init; } = [];
-
-        /// <summary>
-        /// Gets all series of a specific data model type.
-        /// </summary>
-        /// <returns></returns>
-        public List<IChartSeriesAbstract> GetSeries()
+    /// <summary>
+    /// Get all categorical labels by axis key.
+    /// </summary>
+    /// <returns></returns>
+    public Dictionary<string, string[]> GetCategoricalLabels()
+    {
+        Dictionary<string, string[]> results = [];
+        foreach (T axis in Axes.GetAllAxes())
         {
-            return Series;
+            results.Add(axis.Key, []);
         }
 
-        /// <summary>
-        /// Get all categorical labels by axis key.
-        /// </summary>
-        /// <returns></returns>
-        public Dictionary<string, string[]> GetCategoricalLabels()
+        foreach(IChartSeriesAbstract data_series in GetSeries())
         {
-            Dictionary<string, string[]> results = [];
-            foreach (T axis in Axes.GetAllAxes())
+            foreach(var axis in data_series.Axes)
             {
-                results.Add(axis.Key, []);
-            }
-
-            foreach(IChartSeriesAbstract data_series in GetSeries())
-            {
-                foreach(var axis in data_series.Axes)
+                if(axis.Value.AxisType == AxisType.Categorical && results.ContainsKey(axis.Value.Key))
                 {
-                    if(axis.Value.AxisType == AxisType.Categorical && results.ContainsKey(axis.Value.Key))
-                    {
-                        results[axis.Value.Key] = data_series.Data.GetAllDataPoints()
-                            .OfType<CategoricalData>()
-                            .Select(d => d.Category)
-                            .Distinct()
-                            .ToArray();
-                    }
+                    results[axis.Value.Key] = data_series.Data.GetAllDataPoints()
+                        .OfType<CategoricalData>()
+                        .Select(d => d.Category)
+                        .Distinct()
+                        .ToArray();
                 }
             }
-            return results;
         }
-
-        /// <summary>
-        /// Indicates whether to show the legend.
-        /// </summary>
-        public bool ShowLegend { get; set; } = true;
-
-        /// <summary>
-        /// The collection of axes in the chart.
-        /// </summary>
-        public abstract IAxisCollectionAbstract<T> Axes { get; init; }
-
-  
+        return results;
     }
+
+    /// <summary>
+    /// Indicates whether to show the legend.
+    /// </summary>
+    public bool ShowLegend { get; set; } = true;
+
+    /// <summary>
+    /// The collection of axes in the chart.
+    /// </summary>
+    public abstract IAxisCollectionAbstract<T> Axes { get; init; }
+
+
 }

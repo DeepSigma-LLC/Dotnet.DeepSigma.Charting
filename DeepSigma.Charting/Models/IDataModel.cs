@@ -1,10 +1,9 @@
 ﻿
-namespace DeepSigma.Charting.Models
+namespace DeepSigma.Charting.Models;
+
+/// <summary>
+/// Marker interface for data models used in charting components.
+/// </summary>
+public interface IDataModel
 {
-    /// <summary>
-    /// Marker interface for data models used in charting components.
-    /// </summary>
-    public interface IDataModel
-    {
-    }
 }

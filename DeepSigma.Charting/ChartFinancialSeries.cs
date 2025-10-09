@@ -1,17 +1,15 @@
-﻿using DeepSigma.Charting.Models;
-using DeepSigma.Charting.Enum;
+﻿using DeepSigma.Charting.Enum;
 using DeepSigma.Charting.Interfaces;
 
-namespace DeepSigma.Charting
+namespace DeepSigma.Charting;
+
+/// <summary>
+/// Represents a series of data points in a chart.
+/// </summary>
+public class ChartFinancialSeries : ChartSeriesAbstract, IChartSeriesAbstract
 {
     /// <summary>
-    /// Represents a series of data points in a chart.
+    /// Gets or sets the type of the chart series.
     /// </summary>
-    public class ChartFinancialSeries : ChartSeriesAbstract, IChartSeriesAbstract
-    {
-        /// <summary>
-        /// Gets or sets the type of the chart series.
-        /// </summary>
-        public required FinancialChartType ChartType { get; set; }
-    }
+    public required FinancialChartType ChartType { get; set; }
 }
