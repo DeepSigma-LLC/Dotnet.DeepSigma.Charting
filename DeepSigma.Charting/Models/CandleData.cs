@@ -37,6 +37,16 @@ public class CandleData : IDataModel
     public decimal SellVolume { get; set; }
 
     /// <summary>
+    /// The total volume of the candle.
+    /// </summary>
+    public decimal TotalVolume => BuyVolume + SellVolume;
+
+    /// <summary>
+    /// The net volume of the candle.
+    /// </summary>
+    public decimal NetVolume => BuyVolume - SellVolume;
+
+    /// <summary>
     /// Initializes a new instance of the <see cref="CandleData"/> class.
     /// </summary>
     public CandleData() { }

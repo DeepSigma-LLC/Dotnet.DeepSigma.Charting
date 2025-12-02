@@ -34,9 +34,9 @@ public interface IChart<T> where T : IAxis
     /// <returns></returns>
     List<IChartSeriesAbstract> GetSeries();
 
-
     /// <summary>
-    /// Retrieves categorical labels for axes that use categorical data.
+    /// Get a collection of categorical labels by axis key.
+    /// If an axis is not categorical, its value will be an empty array.
     /// </summary>
     /// <returns></returns>
     Dictionary<string, string[]> GetCategoricalLabels();

@@ -5,31 +5,16 @@ namespace DeepSigma.Charting.Models;
 /// <summary>
 /// Represents a data model for XY data points.
 /// </summary>
-public class XYData : IDataModel
+public class XYData(double X, double Y) : IDataModel
 {
     /// <summary>
     /// The X coordinate of the data point.
     /// </summary>
-    public double X { get; set; }
+    public double X { get; set; } = X;
 
     /// <summary>
     /// The Y coordinate of the data point.
     /// </summary>
-    public double Y { get; set; }
+    public double Y { get; set; } = Y;
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="XYData"/> class.
-    /// </summary>
-    public XYData() { }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="XYData"/> class with specified values.
-    /// </summary>
-    /// <param name="x"></param>
-    /// <param name="y"></param>
-    public XYData(double x, double y)
-    {
-        X = x;
-        Y = y;
-    }
 }

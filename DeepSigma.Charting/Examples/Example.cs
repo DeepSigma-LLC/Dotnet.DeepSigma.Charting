@@ -86,7 +86,7 @@ internal class Example
         {
             Color = Color.Red,
             SeriesName = "S&P 500",
-            ChartType = FinancialChartType.CandleStick,
+            ChartType = FinancialSeriesChartType.CandleStick,
             Data = candle_Series
         };
         fin_series.Axes.Add(0, x_axis);
@@ -96,7 +96,7 @@ internal class Example
         {
             Color = Color.Red,
             SeriesName = "S&P 500 Volume",
-            ChartType = FinancialChartType.Volume,
+            ChartType = FinancialSeriesChartType.Volume,
             Data = candle_Series
         };
         vol_series.Axes.Add(0, x_axis);
@@ -106,10 +106,9 @@ internal class Example
         {
             Color = Color.Red,
             SeriesName = "S&P 500",
-            ChartType = DataChartType.Line,
+            ChartType = DataSeriesChartType.Line,
             Data = line_Series
         };
-
 
         chart.Series.Add(fin_series);
         chart.Series.Add(vol_series);

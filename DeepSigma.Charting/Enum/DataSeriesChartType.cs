@@ -4,7 +4,7 @@ namespace DeepSigma.Charting.Enum;
 /// <summary>
 /// Defines the type of XY chart to be rendered.
 /// </summary>
-public enum DataChartType
+public enum DataSeriesChartType
 {
     /// <summary>
     /// A line chart, which displays information as a series of data points connected by straight line segments.

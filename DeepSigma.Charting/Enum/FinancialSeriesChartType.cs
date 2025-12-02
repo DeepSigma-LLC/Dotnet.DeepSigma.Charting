@@ -4,7 +4,7 @@ namespace DeepSigma.Charting.Enum;
 /// <summary>
 /// Defines the type of financial chart.
 /// </summary>
-public enum FinancialChartType
+public enum FinancialSeriesChartType
 {
         /// <summary>
     /// A candlestick chart, which is a style of financial chart used to describe price movements of a security, derivative, or currency.

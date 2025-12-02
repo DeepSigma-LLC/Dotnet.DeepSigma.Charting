@@ -4,7 +4,7 @@ namespace DeepSigma.Charting.Enum;
 /// <summary>
 /// Defines the type of chart to be rendered.
 /// </summary>
-public enum MiscChartSeriesType
+public enum MiscSeriesChartType
 {
     /// <summary>
     /// A heatmap, which is a data visualization technique that shows the magnitude of a phenomenon as color in two dimensions.

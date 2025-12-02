@@ -9,36 +9,20 @@ namespace DeepSigma.Charting;
 /// </summary>
 public abstract class ChartAbstract<T> : IChart<T> where T : IAxis 
 {
-    /// <summary>
-    /// The title of the chart.
-    /// </summary>
+    /// <inheritdoc/>
     public string Title { get; set; } = String.Empty;
 
-    /// <summary>
-    /// The collection of data series in the chart.
-    /// </summary>
+    /// <inheritdoc/>
     public List<IChartSeriesAbstract> Series { get; init; } = [];
 
-    /// <summary>
-    /// Gets all series of a specific data model type.
-    /// </summary>
-    /// <returns></returns>
-    public List<IChartSeriesAbstract> GetSeries()
-    {
-        return Series;
-    }
+    /// <inheritdoc/>
+    public List<IChartSeriesAbstract> GetSeries() => Series;
 
-    /// <summary>
-    /// Get all categorical labels by axis key.
-    /// </summary>
-    /// <returns></returns>
+    /// <inheritdoc/>
     public Dictionary<string, string[]> GetCategoricalLabels()
     {
         Dictionary<string, string[]> results = [];
-        foreach (T axis in Axes.GetAllAxes())
-        {
-            results.Add(axis.Key, []);
-        }
+        Axes.GetAllAxes().ForEach(a => results.Add(a.Key, []));
 
         foreach(IChartSeriesAbstract data_series in GetSeries())
         {
@@ -57,15 +41,9 @@ public abstract class ChartAbstract<T> : IChart<T> where T : IAxis
         return results;
     }
 
-    /// <summary>
-    /// Indicates whether to show the legend.
-    /// </summary>
+    /// <inheritdoc/>
     public bool ShowLegend { get; set; } = true;
 
-    /// <summary>
-    /// The collection of axes in the chart.
-    /// </summary>
+    /// <inheritdoc/>
     public abstract IAxisCollectionAbstract<T> Axes { get; init; }
-
-
 }

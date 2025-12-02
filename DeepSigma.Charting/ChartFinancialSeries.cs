@@ -11,5 +11,5 @@ public class ChartFinancialSeries : ChartSeriesAbstract, IChartSeriesAbstract
     /// <summary>
     /// Gets or sets the type of the chart series.
     /// </summary>
-    public required FinancialChartType ChartType { get; set; }
+    public required FinancialSeriesChartType ChartType { get; set; }
 }

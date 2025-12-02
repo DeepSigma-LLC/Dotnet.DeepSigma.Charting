@@ -32,5 +32,5 @@ public abstract class ChartSeriesAbstract : IChartSeriesAbstract
     /// <summary>
     /// The data series containing the data points.
     /// </summary>
-    public DataSeries<IDataModel> Data { get; set; } = new DataSeries<IDataModel>(); 
+    public DataSeries<IDataModel> Data { get; set; } = new(); 
 }
