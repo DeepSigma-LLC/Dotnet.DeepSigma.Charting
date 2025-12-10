@@ -19,15 +19,18 @@ public interface IAxis
     /// <summary>
     /// Unique key to identify the axis (e.g., "X", "Y", "Y2").
     /// </summary>
-    string Key { get; set; }
+    AxisDimension Key { get; set; }
+
     /// <summary>
     /// Major gridline style for the axis.
     /// </summary>
     ChartLineStyle MajorGridlineStyle { get; set; }
+
     /// <summary>
     /// Maximum value of the axis. Set to double.NaN for automatic scaling.
     /// </summary>
     double Maximum { get; set; }
+
     /// <summary>
     /// Minimum value of the axis. Set to double.NaN for automatic scaling.
     /// </summary>
@@ -36,30 +39,37 @@ public interface IAxis
     /// Minor gridline style for the axis.
     /// </summary>
     ChartLineStyle MinorGridlineStyle { get; set; }
+
     /// <summary>
     /// Indicates whether to show major grid lines on the axis.
     /// </summary>
     bool ShowMajorGridLines { get; set; }
+
     /// <summary>
     /// Shows or hides minor grid lines on the axis.
     /// </summary>
     bool ShowMinorGridLines { get; set; }
+
     /// <summary>
     /// The title of the axis.
     /// </summary>
     string Title { get; set; }
+
     /// <summary>
     /// The location where the axis starts in the chart (0.0 to 1.0).
     /// </summary>
     double StartLocation { get; set; }
+
     /// <summary>
     /// The location where the axis ends in the chart (0.0 to 1.0).
     /// </summary>
     double EndLocation { get; set; }
+
     /// <summary>
     /// Indicates whether panning is enabled for the axis.
     /// </summary>
     bool IsPanEnabled { get; set; }
+
     /// <summary>
     /// Indicates whether zooming is enabled for the axis.
     /// </summary>

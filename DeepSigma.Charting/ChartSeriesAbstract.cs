@@ -12,7 +12,7 @@ public abstract class ChartSeriesAbstract : IChartSeriesAbstract
     /// <summary>
     /// The name of the data series.
     /// </summary>
-    public required string SeriesName { get; set; } = string.Empty;
+    public required string SeriesName { get; set; }
 
     /// <summary>
     /// The color of the data series.

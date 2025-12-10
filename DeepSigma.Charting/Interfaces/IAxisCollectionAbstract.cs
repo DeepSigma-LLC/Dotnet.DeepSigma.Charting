@@ -1,4 +1,6 @@
 ﻿
+using DeepSigma.Charting.Enum;
+
 namespace DeepSigma.Charting.Interfaces;
 
 /// <summary>
@@ -12,7 +14,7 @@ public interface IAxisCollectionAbstract<T> where T : IAxis
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>
-    T this[string key] { get; }
+    T this[AxisDimension key] { get; }
 
     /// <summary>
     /// Adds an axis to the collection.
@@ -31,12 +33,12 @@ public interface IAxisCollectionAbstract<T> where T : IAxis
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>
-    T? TryToGetAxis(string key);
+    T? TryToGetAxis(AxisDimension key);
 
     /// <summary>
     /// Tries to remove the axis associated with the specified key.
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>
-    bool TryToRemoveAxis(string key);
+    bool TryToRemoveAxis(AxisDimension key);
 }

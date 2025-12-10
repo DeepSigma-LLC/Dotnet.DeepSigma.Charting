@@ -1,5 +1,7 @@
 ﻿
 
+using DeepSigma.Charting.Enum;
+
 namespace DeepSigma.Charting.Interfaces;
 
 /// <summary>
@@ -39,5 +41,5 @@ public interface IChart<T> where T : IAxis
     /// If an axis is not categorical, its value will be an empty array.
     /// </summary>
     /// <returns></returns>
-    Dictionary<string, string[]> GetCategoricalLabels();
+    Dictionary<AxisDimension, string[]> GetCategoricalLabels();
 }

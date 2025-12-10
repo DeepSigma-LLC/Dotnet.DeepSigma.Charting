@@ -1,4 +1,5 @@
-﻿using DeepSigma.Charting.Interfaces;
+﻿using DeepSigma.Charting.Enum;
+using DeepSigma.Charting.Interfaces;
 
 namespace DeepSigma.Charting;
 
@@ -7,7 +8,7 @@ namespace DeepSigma.Charting;
 /// </summary>
 public abstract class AxisCollectionAbstract<T> : IAxisCollectionAbstract<T> where T : IAxis
 {
-    private Dictionary<string, T> axes { get; init; } = [];
+    private Dictionary<AxisDimension, T> axes { get; init; } = [];
 
     /// <summary>
     /// Gets all axes in the collection.
@@ -28,7 +29,7 @@ public abstract class AxisCollectionAbstract<T> : IAxisCollectionAbstract<T> whe
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>
-    public bool TryToRemoveAxis(string key)
+    public bool TryToRemoveAxis(AxisDimension key)
     {
         return axes.Remove(key);
     }
@@ -38,7 +39,7 @@ public abstract class AxisCollectionAbstract<T> : IAxisCollectionAbstract<T> whe
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>
-    public T? TryToGetAxis(string key)
+    public T? TryToGetAxis(AxisDimension key)
     {
         if (axes.TryGetValue(key, out var axis))
         {
@@ -52,7 +53,7 @@ public abstract class AxisCollectionAbstract<T> : IAxisCollectionAbstract<T> whe
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>
-    public T this[string key] => axes[key];
+    public T this[AxisDimension key] => axes[key];
 
     /// <summary>
     /// Gets all axes in the collection as a list.

@@ -19,14 +19,14 @@ public abstract class ChartAbstract<T> : IChart<T> where T : IAxis
     public List<IChartSeriesAbstract> GetSeries() => Series;
 
     /// <inheritdoc/>
-    public Dictionary<string, string[]> GetCategoricalLabels()
+    public Dictionary<AxisDimension, string[]> GetCategoricalLabels()
     {
-        Dictionary<string, string[]> results = [];
+        Dictionary<AxisDimension, string[]> results = [];
         Axes.GetAllAxes().ForEach(a => results.Add(a.Key, []));
 
         foreach(IChartSeriesAbstract data_series in GetSeries())
         {
-            foreach(var axis in data_series.Axes)
+            foreach(KeyValuePair<int, IAxis> axis in data_series.Axes)
             {
                 if(axis.Value.AxisType == AxisType.Categorical && results.ContainsKey(axis.Value.Key))
                 {

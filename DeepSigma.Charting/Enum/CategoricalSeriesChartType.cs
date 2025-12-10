@@ -1,5 +1,4 @@
-﻿
-namespace DeepSigma.Charting.Enum;
+﻿namespace DeepSigma.Charting.Enum;
 
 /// <summary>
 /// Defines the types of category charts available.

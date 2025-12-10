@@ -15,7 +15,7 @@ internal class Example
         Axis2D x_axis = new()
         {
             Title = "DateTime",
-            Key = "X_Lables",
+            Key = AxisDimension.X,
             AxisPosition = Chart2DAxisPosition.Bottom,
             AxisType = AxisType.DateTime,
             IsZoomEnabled = false,
@@ -26,7 +26,7 @@ internal class Example
         Axis2D price_axis = new()
         {
             Title = "Price",
-            Key = "Price",
+            Key = AxisDimension.Y,
             AxisPosition = Chart2DAxisPosition.Left,
             AxisType = AxisType.Linear,
             MajorGridlineStyle = ChartLineStyle.Dash,
@@ -40,7 +40,7 @@ internal class Example
         Axis2D volume_axis = new()
         {
             Title = "Volume",
-            Key = "Y",
+            Key = AxisDimension.Y,
             AxisPosition = Chart2DAxisPosition.Left,
             AxisType = AxisType.Linear,
             MajorGridlineStyle = ChartLineStyle.Dash,

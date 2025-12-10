@@ -11,7 +11,7 @@ public abstract class AxisAbstract : IAxis
     /// <summary>
     /// A unique identifier for the axis.
     /// </summary>
-    public required string Key { get; set; }
+    public required AxisDimension Key { get; set; }
 
     /// <summary>
     /// The title of the axis.
