@@ -341,13 +341,3 @@ The project file currently targets:
 ## License
 
 MIT
-
-## Contributing
-
-Contributions are welcome. Helpful additions would include:
-
-- backend renderer adapters
-- more example charts
-- validation helpers
-- automated tests
-- NuGet packaging and release notes
